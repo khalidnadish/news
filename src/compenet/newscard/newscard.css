@@ -1,0 +1,22 @@
+.cardcontiner{
+    max-width: 350px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: #ccc;
+}
+
+.image_container{
+    max-width: 200px;
+    padding: 5px;
+
+}
+.img_css{
+    width: 100%;
+    height: auto;
+}
