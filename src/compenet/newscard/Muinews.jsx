@@ -15,20 +15,19 @@ export default function Muinews({ newsdata }) {
   return (
     <Card sx={{ maxWidth: 300, border: "1px solid #ccc" }}>
       <CardHeader
-        avatar={<Avatar src={newsdata.urlToImage} aria-label="recipe" />}
+        avatar={<Avatar src={newsdata.imageUrl} aria-label="recipe" />}
         action={
           <>
-            <Box sx={{ display:"flex",flexDirection:"column"}} >
-            
-            <IconButton aria-label="share" sx={{ margin: 0, minWidth: 0 }}>
-              <a
-                href={newsdata.url}
-                target="_blank"
-                style={{ margin: 0, minWidth: 0 }}
-              >
-                <TravelExploreIcon />
-              </a>
-            </IconButton>
+            <Box sx={{ display: "flex", flexDirection: "column" }}>
+              <IconButton aria-label="share" sx={{ margin: 0, minWidth: 0 }}>
+                <a
+                  href={newsdata.url}
+                  target="_blank"
+                  style={{ margin: 0, minWidth: 0 }}
+                >
+                  <TravelExploreIcon />
+                </a>
+              </IconButton>
             </Box>
           </>
         }
@@ -38,8 +37,9 @@ export default function Muinews({ newsdata }) {
             color="text.secondary"
             fontSize={"10px"}
           >
+         {newsdata.date} {newsdata.time}
             {/* moment({newsdata.publishedAt}). */}
-            {moment(newsdata.publishedAt, "YYYYMMDD").fromNow()};
+            {/* {moment(`${newsdata.date} ${newsdata.time}`, "YYYYMMDD").fromNow()}; */}
           </Typography>
         }
         subheader={
@@ -52,12 +52,12 @@ export default function Muinews({ newsdata }) {
       <CardMedia
         component="img"
         height="194"
-        image={newsdata.urlToImage}
+        image={newsdata.imageUrl}
         alt={newsdata.title}
       />
       <CardContent>
         <Typography align="left" variant="body2" color="text.secondary">
-          {newsdata.description}
+          {newsdata.content}
         </Typography>
       </CardContent>
 
