@@ -56,8 +56,8 @@ const Smallscreen = ({open, setOpen}) => {
   return (
     <>
       <div className="smallceenmenu">
-        <Button onClick={() => handleDrawer()}>
-          <MenuIcon />
+        <Button sx={{minWidth:0}} variant="contained"  size="small" onClick={() => handleDrawer()}>
+          <MenuIcon color="palette.warning.light" />
         </Button>
         {open && <Drawermenu open={open} setOpen={setOpen} />}
       </div>
@@ -80,13 +80,15 @@ const Drawermenu = ({ open, setOpen }) => {
   return (
     <>
       <Drawer anchor="left" open={open} onClose={()=>setOpen(false)}>
-        <Box p={2} width="250px" textAlign="center" role="presentation">
-          <Typography mb={2} variant="h6">Category</Typography>
+        <Box display={"flex"} justifyContent="space-between" alignItems={"center"} p={2} width="250px" textAlign="center" role="presentation">
+          <Typography mb={1} variant="h6">Category</Typography>
+          <Button onClick={()=>setOpen(false)} sx={{minWidth:0}} variant="outlined" >X</Button>
+        </Box>
           <Divider />
+
         <div className="smallcategoyarea">
         <DisplayCategory/>
         </div>
-        </Box>
       </Drawer>
     </>
   );
@@ -103,7 +105,7 @@ return (<>
           label={
             <Typography
               variant="caption"
-              color={"common.white"}
+              // color={"common"}
               textTransform={"capitalize"}
             >
               business
@@ -118,7 +120,7 @@ return (<>
           label={
             <Typography
               variant="caption"
-              color={"common.white"}
+              // color={"common.white"}
               textTransform={"capitalize"}
             >
               entertainment
@@ -133,7 +135,7 @@ return (<>
           label={
             <Typography
               variant="caption"
-              color={"common.white"}
+              // color={"common.white"}
               textTransform={"capitalize"}
             >
               world
@@ -149,7 +151,7 @@ return (<>
           label={
             <Typography
               variant="caption"
-              color={"common.white"}
+              // color={"common.white"}
               textTransform={"capitalize"}
             >
               health
@@ -164,7 +166,7 @@ return (<>
           label={
             <Typography
               variant="caption"
-              color={"common.white"}
+              // color={"common.white"}
               textTransform={"capitalize"}
             >
               science
@@ -179,7 +181,7 @@ return (<>
           label={
             <Typography
               variant="caption"
-              color={"common.white"}
+              // color={"common.white"}
               textTransform={"capitalize"}
             >
               sports
@@ -194,7 +196,7 @@ return (<>
           label={
             <Typography
               variant="caption"
-              color={"common.white"}
+              // color={"common.white"}
               textTransform={"capitalize"}
             >
               technology

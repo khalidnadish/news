@@ -58,7 +58,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 export default function Modex() {
     const { setModex } = useContext(Newslink);
-     const [checked,setChecked] =useState(false);
+     const [checked,setChecked] =useState(true);
      const [label,setLabel] =useState("Dark");
 console.log({checked})
      const handleChange = (event)=>{
